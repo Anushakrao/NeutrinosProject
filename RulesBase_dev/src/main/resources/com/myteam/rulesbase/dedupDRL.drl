@@ -1,0 +1,91 @@
+package com.myteam.rulesbase;
+import com.myteam.rulesbase.dedupCaseParams;
+import com.myteam.rulesbase.dedupResponse;
+
+rule "checkinit"
+when
+$dedupResponse:dedupResponse()
+then
+$dedupResponse.setDupPolicyNumber(false);
+$dedupResponse.setDupIncidentType(false);
+$dedupResponse.setDupVehicle(false);
+$dedupResponse.setDuplicateStatus(false);
+$dedupResponse.setPotentialDuplicate(false);
+update($dedupResponse)
+end;
+
+
+
+rule "checkPolicyNumtrue"
+when 
+$dedupResponse:dedupResponse(dedupResponse.existingCase.policyNumber==dedupResponse.newCase.policyNumber)
+then
+$dedupResponse.setDupPolicyNumber(true);
+update($dedupResponse)
+end;
+
+rule "checkPolicyNumfalse"
+when 
+$dedupResponse:dedupResponse(dedupResponse.existingCase.policyNumber!=dedupResponse.newCase.policyNumber)
+then
+$dedupResponse.setDupPolicyNumber(false);
+update($dedupResponse)
+end;
+
+rule "checkIncideTypetrue"
+when
+$dedupResponse:dedupResponse((dedupResponse.existingCase.incidentType==dedupResponse.newCase.incidentType)||(dedupResponse.existingCase.vehicleIncidentType==dedupResponse.newCase.vehicleIncidentType&&dedupResponse.existingCase.vehicleIncidentSubtype==dedupResponse.newCase.vehicleIncidentSubtype))
+then
+$dedupResponse.setDupIncidentType(true);
+update($dedupResponse)
+end;
+
+rule "checkIncideTypefalse"
+when
+$dedupResponse:dedupResponse((dedupResponse.existingCase.incidentType!=dedupResponse.newCase.incidentType)||(dedupResponse.existingCase.vehicleIncidentType!=dedupResponse.newCase.vehicleIncidentType&&dedupResponse.existingCase.vehicleIncidentSubtype!=dedupResponse.newCase.vehicleIncidentSubtype))
+then
+$dedupResponse.setDupIncidentType(false);
+update($dedupResponse)
+end;
+
+rule "checkVehicletrue"
+when
+$dedupResponse:dedupResponse((dedupResponse.existingCase.vehicleRegistrationNumber==dedupResponse.newCase.vehicleRegistrationNumber)||(dedupResponse.existingCase.vehicleSequenceNumber==dedupResponse.newCase.vehicleSequenceNumber))
+then
+$dedupResponse.setDupVehicle(true);
+update($dedupResponse)
+end;
+
+rule "checkVehiclefalse"
+when
+$dedupResponse:dedupResponse((dedupResponse.existingCase.vehicleRegistrationNumber!=dedupResponse.newCase.vehicleRegistrationNumber)||(dedupResponse.existingCase.vehicleSequenceNumber!=dedupResponse.newCase.vehicleSequenceNumber))
+then
+$dedupResponse.setDupVehicle(false);
+update($dedupResponse)
+end;
+
+
+rule "checkdupStatusfalse"
+when
+$dedupResponse:dedupResponse(dupPolicyNumber==false||dupIncidentTime==false)
+then
+$dedupResponse.setDuplicateStatus(false);
+update($dedupResponse)
+end;
+
+rule "checkdupStatustrue"
+when
+$dedupResponse:dedupResponse(dupPolicyNumber==true&&dupIncidentTime==true&&dupIncidentType==true&&dupIncidentLocation==true&&dupVehicle==true)
+then
+$dedupResponse.setDuplicateStatus(true);
+update($dedupResponse)
+end;
+
+rule "checkPotentialTrue"
+when
+$dedupResponse:dedupResponse((dupPolicyNumber==true&&dupIncidentTime==true)&&(dupVehicle==false||dupIncidentType==false||dupIncidentLocation==false))
+then
+$dedupResponse.setDuplicateStatus(false);
+$dedupResponse.setPotentialDuplicate(true);
+update($dedupResponse)
+end;
