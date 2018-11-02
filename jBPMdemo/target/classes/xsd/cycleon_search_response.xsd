@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema id="SearchResponse" elementFormDefault="qualified"
+           targetNamespace="SearchResponse.xsd" xmlns="SearchResponse.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mstns="SearchResponse.xsd">
+    <xs:element name="SearchResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="SearchResult" maxOccurs="unbounded"
+                            minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Field"
+                                        maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension
+                                                base="xs:string">
+                                            <xs:attribute
+                                                    type="xs:string" name="name" use="optional"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="hash" type="xs:string"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="TotalPages" type="xs:int" maxOccurs="1" minOccurs="1"></xs:element>
+                <xs:element type="xs:int" name="TotalCount" maxOccurs="1" minOccurs="1"/>
+
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="status"/>
+            <xs:attribute type="xs:string" name="message"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

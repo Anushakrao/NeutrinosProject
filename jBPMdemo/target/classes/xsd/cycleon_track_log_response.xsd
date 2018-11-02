@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema id="LogResponse" elementFormDefault="qualified" targetNamespace="LogResponse.xsd" xmlns="LogResponse.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="LogResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="LogEntries">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="LogEntry" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="Event"/>
+                                        <xs:element type="xs:string" name="Message"/>
+                                        <xs:element type="xs:string" name="Location"/>
+                                        <xs:element type="xs:string" name="Created"/>
+                                        <xs:element type="ReturnType" name="type" nillable="true"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="type" type="ReturnType"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="status"/>
+            <xs:attribute type="xs:string" name="message"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="ReturnType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="INBOUND"/>
+            <xs:enumeration value="OUTBOUND"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

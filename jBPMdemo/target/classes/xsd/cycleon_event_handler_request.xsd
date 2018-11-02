@@ -1,0 +1,86 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<xs:schema id="EventsType" targetNamespace="EventsType.xsd"
+           elementFormDefault="qualified" xmlns="EventsType.xsd" xmlns:tns="EventsType.xsd"
+            xmlns:auth="AuthenticationCreateRequest.xsd" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:import namespace="AuthenticationCreateRequest.xsd" schemaLocation="cycleon_create_authentication_request.xsd" />
+    <xs:element name="EventsType">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element ref="auth:Authentication"  maxOccurs="1" minOccurs="1"/>
+                <xs:element name="event" type="tns:EventType" maxOccurs="unbounded"
+                            minOccurs="1">
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="EventType">
+        <xs:attribute name="event" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>Identifies an event, by either database id or bean name.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="timestamp" use="optional">
+            <xs:annotation>
+                <xs:documentation>Defaults to current time. The dateTime is specified in the following form &quot;yyyy-MM-DDThh:mm:ss&quot;.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:dateTime">
+                    <xs:pattern value="(\d{4})-(0?[1-9]|1[012])-(0?[1-9]|[12]\d|3[01])T(\d{2}):(\d{2}):(\d{2})"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="ref" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>Reference number for a parcel, pallet, box, transportOrder or expressOrder. This id
+                    can be a cycleonId, a database id (in combination with type attribute), a postal id, or tracking
+                    number.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="message" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>Text for event description.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="location" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The place where the event happened.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="weight" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The parcel weight.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="countryIso" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>The parcel country iso.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="numberOfPhysicalLifts" type="xs:int" use="optional">
+            <xs:annotation>
+                <xs:documentation>The transport order number of physical lifts.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="type" use="optional">
+            <xs:annotation>
+                <xs:documentation>Only mandatory if trackable attribute refers to a database Id.
+                </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="PARCEL"></xs:enumeration>
+                    <xs:enumeration value="BOX"></xs:enumeration>
+                    <xs:enumeration value="PALLET"></xs:enumeration>
+                    <xs:enumeration value="TRANSPORTORDER"></xs:enumeration>
+                    <xs:enumeration value="EXPRESSORDER"></xs:enumeration>
+                    <xs:enumeration value="EOTRACKINGNUMBER"></xs:enumeration>
+                    <xs:enumeration value="EOSECONDARYTRACKINGNUMBER"></xs:enumeration>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+
+    </xs:complexType>
+</xs:schema>

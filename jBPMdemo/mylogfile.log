@@ -1,0 +1,254 @@
+<object-stream>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events>
+    <org.drools.core.audit.event.RuleFlowLogEvent>
+      <type>8</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+    </org.drools.core.audit.event.RuleFlowLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>24</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+      <nodeId>_1</nodeId>
+      <nodeInstanceId>0</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>26</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+      <nodeId>_1</nodeId>
+      <nodeInstanceId>0</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>24</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+      <nodeId>_2</nodeId>
+      <nodeName>Hello</nodeName>
+      <nodeInstanceId>1</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>26</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+      <nodeId>_2</nodeId>
+      <nodeName>Hello</nodeName>
+      <nodeInstanceId>1</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>24</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+      <nodeId>_3</nodeId>
+      <nodeInstanceId>2</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>26</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+      <nodeId>_3</nodeId>
+      <nodeInstanceId>2</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowLogEvent>
+      <type>10</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+    </org.drools.core.audit.event.RuleFlowLogEvent>
+    <org.drools.core.audit.event.RuleFlowLogEvent>
+      <type>11</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+    </org.drools.core.audit.event.RuleFlowLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>27</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+      <nodeId>_3</nodeId>
+      <nodeInstanceId>2</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>25</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+      <nodeId>_3</nodeId>
+      <nodeInstanceId>2</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>27</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+      <nodeId>_2</nodeId>
+      <nodeName>Hello</nodeName>
+      <nodeInstanceId>1</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>25</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+      <nodeId>_2</nodeId>
+      <nodeName>Hello</nodeName>
+      <nodeInstanceId>1</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>27</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+      <nodeId>_1</nodeId>
+      <nodeInstanceId>0</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>25</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+      <nodeId>_1</nodeId>
+      <nodeInstanceId>0</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowLogEvent>
+      <type>9</type>
+      <processId>com.sample.bpmn.hello</processId>
+      <processName>Hello World</processName>
+      <processInstanceId>203</processInstanceId>
+    </org.drools.core.audit.event.RuleFlowLogEvent>
+    <org.drools.core.audit.event.RuleFlowLogEvent>
+      <type>8</type>
+      <processId>com.sample.nwsearch</processId>
+      <processName>perform nw search</processName>
+      <processInstanceId>204</processInstanceId>
+    </org.drools.core.audit.event.RuleFlowLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>24</type>
+      <processId>com.sample.nwsearch</processId>
+      <processName>perform nw search</processName>
+      <processInstanceId>204</processInstanceId>
+      <nodeId>StartEvent_1</nodeId>
+      <nodeInstanceId>0</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>26</type>
+      <processId>com.sample.nwsearch</processId>
+      <processName>perform nw search</processName>
+      <processInstanceId>204</processInstanceId>
+      <nodeId>StartEvent_1</nodeId>
+      <nodeInstanceId>0</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>24</type>
+      <processId>com.sample.nwsearch</processId>
+      <processName>perform nw search</processName>
+      <processInstanceId>204</processInstanceId>
+      <nodeId>ServiceTask_2</nodeId>
+      <nodeName>NwsItemHandler</nodeName>
+      <nodeInstanceId>1</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowLogEvent>
+      <type>10</type>
+      <processId>com.sample.nwsearch</processId>
+      <processName>perform nw search</processName>
+      <processInstanceId>204</processInstanceId>
+    </org.drools.core.audit.event.RuleFlowLogEvent>
+    <org.drools.core.audit.event.RuleFlowNodeLogEvent>
+      <type>27</type>
+      <processId>com.sample.nwsearch</processId>
+      <processName>perform nw search</processName>
+      <processInstanceId>204</processInstanceId>
+      <nodeId>ServiceTask_2</nodeId>
+      <nodeName>NwsItemHandler</nodeName>
+      <nodeInstanceId>1</nodeInstanceId>
+    </org.drools.core.audit.event.RuleFlowNodeLogEvent>
+    <org.drools.core.audit.event.RuleFlowLogEvent>
+      <type>11</type>
+      <processId>com.sample.nwsearch</processId>
+      <processName>perform nw search</processName>
+      <processInstanceId>204</processInstanceId>
+    </org.drools.core.audit.event.RuleFlowLogEvent>
+  </events>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events/>
+</org.drools.core.audit.WorkingMemoryLog>

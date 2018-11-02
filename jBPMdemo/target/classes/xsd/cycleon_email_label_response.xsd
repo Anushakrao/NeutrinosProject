@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="EmailLabelResponse.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mstns="EmailLabelResponse.xsd" id="EmailLabelResponse" elementFormDefault="qualified" targetNamespace="EmailLabelResponse.xsd">
+    <!--  UPDATES  -->
+    <!--  Renamed EmailResponse to EmailLabelResponse  -->
+    <xs:element name="EmailLabelResponse">
+        <xs:complexType>
+            <xs:sequence></xs:sequence>
+            <xs:attribute name="status">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="OKAY"/>
+                        <xs:enumeration value="WARNING"/>
+                        <xs:enumeration value="ERROR"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="message" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation/>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

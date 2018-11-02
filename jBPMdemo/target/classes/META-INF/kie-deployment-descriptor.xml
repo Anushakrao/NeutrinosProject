@@ -1,0 +1,8 @@
+ <work-item-handlers>  
+        <work-item-handler>  
+            <resolver>mvel</resolver>  
+            <identifier>new com.sample.handlers.NwsItemHandler()</identifier>  
+            <parameters/>  
+            <name>Rest</name>  
+        </work-item-handler>  
+    </work-item-handlers>  

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema id="LabelResponse" elementFormDefault="qualified" targetNamespace="LabelResponse.xsd" xmlns="LabelResponse.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mstns="LabelResponse.xsd">
+    <!-- UPDATES -->
+    <!-- Renamed PrintResponse to LabelResponse -->
+    <!-- Added url to LabelResponse element and can be missing -->
+    <xs:element name="LabelResponse">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element name="Url" type="LabelUrl" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="Label" type="LabelType"
+                            maxOccurs="unbounded" minOccurs="0">
+                </xs:element>
+            </xs:choice>
+            <xs:attribute name="status">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="OKAY"/>
+                        <xs:enumeration value="WARNING"/>
+                        <xs:enumeration value="ERROR"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="message" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation/>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="LabelUrl">
+        <xs:simpleContent>
+            <xs:extension base="xs:string"/>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="LabelType">
+        <xs:simpleContent>
+            <xs:extension base="xs:base64Binary">
+                <xs:attribute name="cycleonId" type="xs:string" use="required"/>
+                <xs:attribute name="page" type="xs:int"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema id="StatesType" targetNamespace="StatesType.xsd"
+	elementFormDefault="qualified" xmlns="StatesType.xsd" xmlns:mstns="StatesType.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="StatesType">
+	    <xs:complexType>
+	        <xs:annotation>
+	        	<xs:documentation>Reference to the trackable that an event was logged on, as it was specified in the request. Also filled if a trackable cannot be found.</xs:documentation>
+	        </xs:annotation>
+	        <xs:sequence>
+	    		<xs:element name="state" type="mstns:StateType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+	    	</xs:sequence>
+	    </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="StateType">
+    	<xs:sequence>
+    		<xs:element name="affected" type="mstns:StateType"></xs:element>
+    	</xs:sequence>
+    	<xs:attribute name="type" use="required">
+    		<xs:simpleType>
+    			<xs:restriction base="xs:string">
+    				<xs:enumeration value="PALLET"></xs:enumeration>
+    				<xs:enumeration value="BOX"></xs:enumeration>
+    				<xs:enumeration value="PALLET"></xs:enumeration>
+    				<xs:enumeration value="TRANSPORT"></xs:enumeration>
+    				<xs:enumeration value="EXPRESS"></xs:enumeration>
+    			</xs:restriction>
+    		</xs:simpleType>
+    	</xs:attribute>
+        <xs:attribute name="ref" type="xs:string" use="required"></xs:attribute>
+        <xs:attribute name="id" type="xs:string" use="optional"></xs:attribute>
+    	<xs:attribute name="cycleonid" type="xs:string" use="optional"></xs:attribute>
+    	<xs:attribute name="state" type="xs:string" use="optional"></xs:attribute>
+    	<xs:attribute name="errorcode" type="xs:string" use="optional"></xs:attribute>
+    	<xs:attribute name="message" type="xs:string" use="optional"></xs:attribute>
+    </xs:complexType>
+</xs:schema>

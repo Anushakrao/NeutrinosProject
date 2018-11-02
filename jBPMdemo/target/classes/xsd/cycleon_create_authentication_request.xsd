@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="AuthenticationCreateRequest.xsd" id="AuthenticationCreateRequest" elementFormDefault="qualified" targetNamespace="AuthenticationCreateRequest.xsd">
+   
+            <xs:element name="Authentication">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="Source" type="xs:string" maxOccurs="1" minOccurs="0" />
+                     <xs:element name="UserId" type="xs:string" maxOccurs="1" minOccurs="1" />
+                     <xs:element name="AuthenticationToken" type="xs:string" maxOccurs="1" minOccurs="1" />
+                     <xs:element name="ServiceToken" type="xs:string" maxOccurs="1" minOccurs="0" />
+                     <xs:element name="Comment" type="xs:string" maxOccurs="1" minOccurs="0" />
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+   
+</xs:schema>

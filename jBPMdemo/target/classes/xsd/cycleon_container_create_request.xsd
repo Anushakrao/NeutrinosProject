@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema id="ContainerCreateRequest" elementFormDefault="qualified"
+	targetNamespace="ContainerCreateRequest.xsd" xmlns="ContainerCreateRequest.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:auth="AuthenticationCreateRequest.xsd">
+
+	<xs:import namespace="AuthenticationCreateRequest.xsd"
+		schemaLocation="cycleon_create_authentication_request.xsd" />
+	<!-- UPDATES -->
+	<!-- Renamed ContainerRequest to ContainerCreateRequest -->
+	<xs:element name="ContainerCreateRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="auth:Authentication" maxOccurs="1"
+					minOccurs="1" />
+				<xs:element name="SortingType" type="xs:string"
+					maxOccurs="1" minOccurs="1">
+				</xs:element>
+				<xs:element name="Frontend" type="xs:string" maxOccurs="1"
+                            minOccurs="0"/>
+				<xs:element name="Country" maxOccurs="1" minOccurs="1"
+					type="CountryIsoCode">
+				</xs:element>
+				<xs:element name="Quantity" maxOccurs="1" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minExclusive value="0" />
+							<xs:maxExclusive value="100" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Questions" type="QuestionsType" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="CountryIsoCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AD" />
+			<xs:enumeration value="AE" />
+			<xs:enumeration value="AL" />
+			<xs:enumeration value="AO" />
+			<xs:enumeration value="AR" />
+			<xs:enumeration value="AT" />
+			<xs:enumeration value="AU" />
+			<xs:enumeration value="BA" />
+			<xs:enumeration value="BE" />
+			<xs:enumeration value="BG" />
+			<xs:enumeration value="BR" />
+			<xs:enumeration value="CA" />
+			<xs:enumeration value="CH" />
+			<xs:enumeration value="CL" />
+			<xs:enumeration value="CN" />
+			<xs:enumeration value="CY" />
+			<xs:enumeration value="CZ" />
+			<xs:enumeration value="DE" />
+			<xs:enumeration value="DK" />
+			<xs:enumeration value="EE" />
+			<xs:enumeration value="ES" />
+			<xs:enumeration value="FI" />
+			<xs:enumeration value="FR" />
+			<xs:enumeration value="GB" />
+			<xs:enumeration value="GG" />
+			<xs:enumeration value="GI" />
+			<xs:enumeration value="GL" />
+			<xs:enumeration value="GR" />
+			<xs:enumeration value="GU" />
+			<xs:enumeration value="HK" />
+			<xs:enumeration value="HR" />
+			<xs:enumeration value="HU" />
+			<xs:enumeration value="ID" />
+			<xs:enumeration value="IE" />
+			<xs:enumeration value="IL" />
+			<xs:enumeration value="IM" />
+			<xs:enumeration value="IN" />
+			<xs:enumeration value="IS" />
+			<xs:enumeration value="IT" />
+			<xs:enumeration value="JE" />
+			<xs:enumeration value="JP" />
+			<xs:enumeration value="KR" />
+			<xs:enumeration value="LT" />
+			<xs:enumeration value="LI" />
+			<xs:enumeration value="LU" />
+			<xs:enumeration value="LV" />
+			<xs:enumeration value="MA" />
+			<xs:enumeration value="MC" />
+			<xs:enumeration value="MK" />
+			<xs:enumeration value="MT" />
+			<xs:enumeration value="MX" />
+			<xs:enumeration value="MY" />
+			<xs:enumeration value="NG" />
+			<xs:enumeration value="NL" />
+			<xs:enumeration value="NO" />
+			<xs:enumeration value="PE" />
+			<xs:enumeration value="PH" />
+			<xs:enumeration value="PL" />
+			<xs:enumeration value="PR" />
+			<xs:enumeration value="PT" />
+			<xs:enumeration value="QA" />
+			<xs:enumeration value="RO" />
+			<xs:enumeration value="RS" />
+			<xs:enumeration value="RU" />
+			<xs:enumeration value="SA" />
+			<xs:enumeration value="SE" />
+			<xs:enumeration value="SG" />
+			<xs:enumeration value="SI" />
+			<xs:enumeration value="SK" />
+			<xs:enumeration value="SM" />
+			<xs:enumeration value="TD" />
+			<xs:enumeration value="TH" />
+			<xs:enumeration value="TR" />
+			<xs:enumeration value="TW" />
+			<xs:enumeration value="US" />
+			<xs:enumeration value="UY" />
+			<xs:enumeration value="VA" />
+			<xs:enumeration value="VE" />
+			<xs:enumeration value="VN" />
+			<xs:enumeration value="ZA" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="QuestionsType">
+		<xs:sequence>
+			<xs:element name="Question" type="QuestionType" maxOccurs="unbounded"
+				minOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="QuestionType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="ref" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Reference to a question. This can be the
+							database ID of a question in Unicorn.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

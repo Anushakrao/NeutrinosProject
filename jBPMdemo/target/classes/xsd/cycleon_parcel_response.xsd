@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+		id="ParcelResponse"
+		targetNamespace="ParcelResponse.xsd"
+		elementFormDefault="qualified" xmlns="ParcelResponse.xsd"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- UPDATES -->
+	<!-- Added hash in the cycleon id element -->
+	<xs:element name="ParcelResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CycleonId" type="CycleonIdType" maxOccurs="unbounded"
+							minOccurs="1">
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="status">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="OKAY"></xs:enumeration>
+						<xs:enumeration value="WARNING"></xs:enumeration>
+						<xs:enumeration value="ERROR"></xs:enumeration>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="message" type="xs:string"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="CycleonIdType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="hash" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

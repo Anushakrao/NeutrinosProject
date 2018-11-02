@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="EmailLabelRequest.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" id="EmailLabelRequest" elementFormDefault="qualified" 
+ xmlns:auth="AuthenticationCreateRequest.xsd" targetNamespace="EmailLabelRequest.xsd">
+ <xs:import namespace="AuthenticationCreateRequest.xsd" schemaLocation="cycleon_create_authentication_request.xsd" />
+    <!--  UPDATES  -->
+    <!--  Renamed EmailRequest to EmailLabelRequest -->
+    <!--  Removed all attributes except Language  -->
+    <!--  Added hash attribute to CycleonId element  -->
+    <xs:element name="EmailLabelRequest">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element ref="auth:Authentication"  maxOccurs="1" minOccurs="1"/>
+                <xs:element name="CycleonId" type="CycleonIdType" maxOccurs="1" minOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>CycleonId of the things we're moving.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="language" type="LanguageIsoCode"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="CycleonIdType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="hash" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>The hash of the cycleon id.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="LanguageIsoCode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ca"/>
+            <xs:enumeration value="cs"/>
+            <xs:enumeration value="da"/>
+            <xs:enumeration value="de"/>
+            <xs:enumeration value="el"/>
+            <xs:enumeration value="en"/>
+            <xs:enumeration value="es"/>
+            <xs:enumeration value="et"/>
+            <xs:enumeration value="fi"/>
+            <xs:enumeration value="fl"/>
+            <xs:enumeration value="fr"/>
+            <xs:enumeration value="hi"/>
+            <xs:enumeration value="hr"/>
+            <xs:enumeration value="hu"/>
+            <xs:enumeration value="id"/>
+            <xs:enumeration value="is"/>
+            <xs:enumeration value="it"/>
+            <xs:enumeration value="ja"/>
+            <xs:enumeration value="ko"/>
+            <xs:enumeration value="lt"/>
+            <xs:enumeration value="lv"/>
+            <xs:enumeration value="ms"/>
+            <xs:enumeration value="mt"/>
+            <xs:enumeration value="nl"/>
+            <xs:enumeration value="no"/>
+            <xs:enumeration value="pl"/>
+            <xs:enumeration value="pt"/>
+            <xs:enumeration value="ru"/>
+            <xs:enumeration value="sk"/>
+            <xs:enumeration value="sl"/>
+            <xs:enumeration value="sv"/>
+            <xs:enumeration value="th"/>
+            <xs:enumeration value="tr"/>
+            <xs:enumeration value="vi"/>
+            <xs:enumeration value="zi"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
